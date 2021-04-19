@@ -1,20 +1,89 @@
 <div class="container-fluid">
+  <!--  start container -->
+  <div class="col-xl-10 col-lg-11 col-12 mx-auto">
     <div class="row">
       <div class="col-lg-6 col-md-8 col-12">
         <div class="card">
-          <h2>
-             Test number
-          </h2> 
-           {{element}}
+          <!--  start card -->
+          <h4 class="text-center mb-3">
+            Test number
+          </h4>
+          <div class="col-lg-10 col-md-11 col-12 mx-auto">
+            <div class="row">
+              <form #f="ngForm" (ngSubmit)="sendElement(f)" class="col-12">
+                <!-- starts form -->
+                <div class="row">
+                  <input type="number" pattern="[0-9]*"  class="form-control col-lg-9" id="number" required ngModel name="number"
+                    #number="ngModel" (ngModelChange)="submitted_number = false;">
+                    <div *ngIf="number.invalid && (number.dirty || number.touched) && number.errors"
+                    class="alert alert-danger">
+                    <div *ngIf="number.errors.required">
+                      The number is required.
+                    </div>
+                    <div *ngIf="number.errors.pattern">
+                      Only cardinal numbers
+                    </div>
+                  </div>
+                  <button class="btn send col-lg-2 offset-lg-1 mt-3 mt-md-0">Send</button>
+                </div>
+              </form>
+            </div>
+            <div *ngIf="number.valid && element && submitted_number" class="row">
+              <div class="col-12 mt-5">
+                <p> The number {{number.value}} is  <span class="sequence-element {{ element | lowercase}}">{{element}}</span> </p>
+              </div>
+            </div>
+          </div>
+          <!--  end card -->
         </div>
       </div>
-      <div class="col-lg-6 col-md-8 col-12">
+      <div class="col-lg-6 col-md-8 col-12  mt-3 mt-md-0">
         <div class="card">
-          <h2>
-             Test sequence
-          </h2> 
-           {{sequence}}
+          <!--  start card -->
+          <h4 class="text-center mb-3">
+            Get fizzbuzz sequence
+          </h4>
+          <div class="col-lg-10 col-md-11 col-12 mx-auto">
+            <div class="row">
+              <form #g="ngForm" (ngSubmit)="sendNumber(g)" class="col-12">
+                <!-- starts form -->
+                <div class="row">
+                  <input type="number" class="form-control col-lg-9" id="number_sequence" required pattern="[0-9]*" ngModel name="number_sequence"
+                    #number_sequence="ngModel" (ngModelChange)="submitted_sequence = false" placeholder="Insert the limit number of the sequence">
+                    <div *ngIf="number_sequence.invalid && (number_sequence.dirty || number_sequence.touched) && number_sequence.errors"
+                    class="alert alert-danger">
+                    <div *ngIf="number_sequence.errors.required">
+                      The number is required.
+                    </div>
+                    <div *ngIf="number_sequence.errors.pattern">
+                      Only cardinal numbers
+                    </div>
+                  </div>
+                  <button class="btn send col-lg-2 offset-lg-1 mt-3 mt-md-0">Send</button>
+                </div>
+              </form>
+            </div>
+            <div class="row justify-content-between" *ngIf="number_sequence.valid && sequence && submitted_sequence">
+              <div class="col-12 mt-3">
+                <p> The result is:</p>
+              </div>
+              <div class="elements-sequence col-12">
+                <div class="row">
+                  <div class="col-auto" *ngFor="let item of sequence; let indx =index;">
+                    <div class="sequence-element {{ item | lowercase}}">
+                      <span>
+                        {{item}}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  end card -->
         </div>
       </div>
     </div>
   </div>
+  <!--  start container -->
+</div>

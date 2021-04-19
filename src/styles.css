@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.custom-body{
+    background-color: #70700702;
+}
+.container-fluid{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+}

@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { FizzbuzzComponent } from './fizzbuzz.component';
 
@@ -8,7 +10,9 @@ describe('FizzbuzzComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FizzbuzzComponent ]
+      declarations: [ FizzbuzzComponent ],
+      imports: [HttpClientTestingModule,
+      FormsModule], 
     })
     .compileComponents();
   });

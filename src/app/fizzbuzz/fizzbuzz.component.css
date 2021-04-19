@@ -1,0 +1,72 @@
+.card{
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.10); 
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.10);
+    padding: 2em;
+    background-color: #fff;
+}
+.sequence-element{
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    min-width: 45px;
+    transition: 1s ease-in-out;
+}
+.elements-sequence .sequence-element{
+    margin: 0.5em;
+}
+
+.fizz{
+    color: #fff;
+    background-color: skyblue;
+}
+
+.buzz{
+    color: #fff;
+background-color: tomato;
+}
+
+.fizzbuzz{
+    color: #fff;
+background-color: indigo;
+}
+
+.btn.send {
+    color: #fff;
+    background-color: #00d362;
+    transition: 0.7s ease-in-out;
+  }
+  
+  .btn.send:hover, .btn.send:focus {
+    transform: scale(1.05);
+    background-color: #6ae622;
+  }
+  h4{
+      font-weight: bold;
+  }
+
+  .elements-sequence{
+      max-height: 350px;
+      overflow-y: auto;
+  }
+  .elements-sequence::-webkit-scrollbar {
+    margin: 0;
+    padding: 0;
+    width: 5px;
+}
+/* Track */
+
+.elements-sequence::-webkit-scrollbar-track {
+    background: #00d362;
+    margin: 0;
+}
+/* Handle */
+
+.elements-sequence::-webkit-scrollbar-thumb {
+    background: #6ae622;
+    margin: 0;
+}
+/* Handle on hover */
+
+.elements-sequence::-webkit-scrollbar-thumb:hover {
+    background: #6ae622;
+}
