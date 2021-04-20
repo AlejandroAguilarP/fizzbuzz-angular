@@ -8,6 +8,9 @@ I used specific colors for each answer case, such as blue for fizz numbers, red 
 
 I try to do somthing useful and helpful for the real people to undertand the fizzbuzz number's logic. In the first case, check what kind of number is any number that the user enters. For the sequence I try to do something more visual to watch all the list give, according to the limit number entered by the user.
 
+## Validation
+
+Before to send a request to api I try to validate the information to prevent errors.
 
 ## Unit test
 

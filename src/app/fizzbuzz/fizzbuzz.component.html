@@ -27,7 +27,7 @@
                 <!-- starts form -->
                 <div class="row">
                   <div class="col-md-9">
-                    <input type="number" pattern="[0-9]*" class="form-control" id="number" required ngModel
+                    <input type="number" min="1" pattern="[0-9]*" class="form-control" id="number" required ngModel
                       name="number" #number="ngModel" placeholder="Insert a number" (ngModelChange)="submitted_number = false;">
                     <div *ngIf="number.invalid && (number.dirty || number.touched) && number.errors" 
                       class="alert alert-danger"> <!-- Print errors -->
@@ -36,6 +36,9 @@
                       </div>
                       <div *ngIf="number.errors.pattern" role="alert">
                         Only cardinal numbers
+                      </div>
+                      <div *ngIf="number.errors.incorrect">
+                        Could be greater than 0
                       </div>
                     </div>
                   </div>
@@ -67,7 +70,7 @@
                 <!-- starts form -->
                 <div class="row">
                   <div class="col-md-9">
-                    <input type="number" class="form-control" id="number_sequence" required pattern="[0-9]*" ngModel
+                    <input type="number"  class="form-control" id="number_sequence" required pattern="[0-9]*" min="1" ngModel
                       name="number_sequence" #number_sequence="ngModel" (ngModelChange)="submitted_sequence = false"
                       placeholder="Insert the limit number of the sequence">
                     <div
@@ -78,6 +81,9 @@
                       </div>
                       <div *ngIf="number_sequence.errors.pattern">
                         Only cardinal numbers
+                      </div>
+                      <div *ngIf="number_sequence.errors.incorrect">
+                        Could be greater than 0
                       </div>
                     </div>
                   </div>
