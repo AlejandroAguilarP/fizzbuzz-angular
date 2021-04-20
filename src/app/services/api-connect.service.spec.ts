@@ -22,7 +22,7 @@ describe('ApiConnectService', () => {
     expect(service).toBeTruthy();
   });
   describe('#requestElement()', () => {
-    it('returned Observable should match the right data', () => {
+    it('returned the correct API url to request', () => {
       const element = 3;
   
       service.requestElement(element)
@@ -37,7 +37,7 @@ describe('ApiConnectService', () => {
     });
   });
   describe('#requestSequence()', () => {
-    it('returned Observable should match the right data', () => {
+    it('returned the correct API url to request', () => {
       const element = 3;
   
       service.requestSequence(element)

@@ -14,9 +14,9 @@ export class ApiConnectService {
    }
 
   requestElement(element: any){
-    return this.http.get(this.urlElement+element,{responseType: 'text'});
+    return this.http.get(this.urlElement+element,{responseType: 'text'}); // The api response is text
   }
   requestSequence(element: any){
-    return this.http.get(this.urlSequence+element,{responseType: 'text'});
+    return this.http.get(this.urlSequence+element,{responseType: 'json'}); // The api response is a json
   }
 }

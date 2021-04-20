@@ -21,9 +21,9 @@ export class FizzbuzzComponent implements OnInit {
   sendElement(f: NgForm){ // this function will send a number to the API
     if(f.valid ){
       this.submitted_number = true;
-          this.serviceApi.requestElement(f.value.number).subscribe((data: any) => {
-        this.element = data;
-        this.is_number = isNaN(parseInt(data));
+        this.serviceApi.requestElement(f.value.number).subscribe((data: any) => {
+        this.element = data; // assign the value of data
+        this.is_number = isNaN(parseInt(data)); // validate if It is a number or a string
       });
     }
   }
@@ -31,7 +31,7 @@ export class FizzbuzzComponent implements OnInit {
     if(g.valid){
       this.submitted_sequence = true;
       this.serviceApi.requestSequence(g.value.number_sequence).subscribe((data: any) => {
-        this.sequence = JSON.parse(data);
+        this.sequence = data; // assign the value of data
       });
     }
   }
